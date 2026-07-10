@@ -1,0 +1,124 @@
+aid: theranest
+url: https://raw.githubusercontent.com/api-evangelist/theranest/refs/heads/main/apis.yml
+name: TheraNest
+kind: company
+description: >-
+  TheraNest (now marketed as Ensora Mental Health) is a behavioral and mental
+  health practice management and EHR platform for therapists, counselors,
+  psychologists, and social workers. It covers client intake, scheduling,
+  telehealth, clinical documentation and notes, treatment plans, client portals,
+  insurance billing and claims, and reporting. TheraNest is the flagship mental
+  health product of Ensora Health (formerly Therapy Brands). As of this review,
+  Ensora does not publish a documented, self-serve public developer API for
+  TheraNest - integration is via partnerships, HIPAA-gated interoperability, and
+  contact-sales arrangements rather than an open developer portal. The API
+  entries below are logical resource groupings modeled from the product surface;
+  their endpoints are NOT documented public endpoints (endpointsModeled true).
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Behavioral Health
+- Mental Health
+- EHR
+- Practice Management
+- Healthcare
+- HIPAA
+- Telehealth
+- Ensora Health
+- Therapy Brands
+created: '2026-07-10'
+modified: '2026-07-10'
+specificationVersion: '0.19'
+apis:
+- aid: theranest:theranest-clients-api
+  name: TheraNest Clients API
+  tags:
+  - Clients
+  - Intake
+  - Demographics
+  - HIPAA
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://ensorahealth.com/product/mental-health/
+  endpointsModeled: true
+  properties:
+  - url: https://ensorahealth.com/why-us/our-technology/
+    type: Documentation
+  - url: https://ensorahealth.com/product/mental-health/
+    type: Website
+  description: >-
+    Logical grouping for client records - demographics, contacts, insurance
+    policies, diagnoses, and client-portal status. Modeled from the TheraNest
+    product surface; no documented public endpoints exist. Access to client PHI
+    is HIPAA-gated and available only through partnership or interoperability
+    arrangements with Ensora, not a self-serve developer API.
+- aid: theranest:theranest-appointments-api
+  name: TheraNest Appointments API
+  tags:
+  - Appointments
+  - Scheduling
+  - Telehealth
+  - Calendar
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://ensorahealth.com/product/mental-health/
+  endpointsModeled: true
+  properties:
+  - url: https://ensorahealth.com/product/mental-health/
+    type: Website
+  description: >-
+    Logical grouping for scheduling - appointments, recurring sessions,
+    telehealth session settings, service codes, and reminders. Modeled from the
+    TheraNest product surface; no documented public endpoints exist. TheraNest
+    surfaces calendar sync with Google Calendar and iCloud and telehealth via
+    Zoom through in-product integrations rather than an open API.
+- aid: theranest:theranest-clinical-notes-api
+  name: TheraNest Clinical Notes API
+  tags:
+  - Clinical Notes
+  - Progress Notes
+  - Treatment Plans
+  - Documentation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://ensorahealth.com/product/mental-health/
+  endpointsModeled: true
+  properties:
+  - url: https://ensorahealth.com/product/mental-health/
+    type: Website
+  description: >-
+    Logical grouping for clinical documentation - progress notes, treatment
+    plans, note templates, and sign-off / locking. Modeled from the TheraNest
+    product surface; no documented public endpoints exist. Clinical documentation
+    is PHI and access is HIPAA-gated. Third parties such as DocuSign integrate
+    with TheraNest notes through product-level partnerships, not an open API.
+- aid: theranest:theranest-billing-claims-api
+  name: TheraNest Billing and Claims API
+  tags:
+  - Billing
+  - Claims
+  - Insurance
+  - Payments
+  - Revenue Cycle
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://ensorahealth.com/product/mental-health/
+  endpointsModeled: true
+  properties:
+  - url: https://ensorahealth.com/product/mental-health/
+    type: Website
+  description: >-
+    Logical grouping for billing and revenue cycle - invoices, payments,
+    insurance eligibility and authorizations, CMS-1500 / 837P claim assembly,
+    and clearinghouse routing. Modeled from the TheraNest product surface; no
+    documented public endpoints exist. Payments run through in-product
+    processors and Ensora clearinghouse services rather than an open developer API.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ensora-health
+- type: Website
+  url: https://theranest.com
+- type: Documentation
+  url: https://theranest.zendesk.com/hc/en-us
+- type: Plans
+  url: plans/theranest-plans-pricing.yml
+- type: FinOps
+  url: finops/theranest-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

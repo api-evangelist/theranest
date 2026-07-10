@@ -1,0 +1,174 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: TheraNest
+providerId: theranest
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Behavioral Health
+- Mental Health
+- EHR
+- Practice Management
+- Plans
+description: >-
+  TheraNest (Ensora Mental Health) is sold as a per-therapist SaaS subscription,
+  not as an API product. There is no published API plan, metered API tier, or
+  developer pricing - any programmatic / partner access is arranged directly
+  with Ensora under a contact-sales and HIPAA business-associate agreement. The
+  plans below are the SaaS practice-management subscription tiers, which are the
+  only published pricing. Ensora recently moved from a per-client model to
+  per-therapist pricing.
+notes: >-
+  Prices are grounded from Ensora / directory listings as of July 2026 and can
+  change - verify on the current pricing page. The Advanced tier price is not
+  consistently published; it sits between Essentials and Premier. An annual AMA
+  CPT license fee (about $19.50 per therapist, billed each December) and
+  additional admin-user fees apply on top of the per-therapist rate.
+sources:
+- https://ensorahealth.com/pricing/theranest-mental-health/
+- https://theranest.com
+- https://www.capterra.com/p/130400/TheraNest-Mental-Health/pricing/
+plans:
+- id: theranest-essentials
+  name: Essentials
+  type: paid
+  description: >-
+    Entry tier for individual therapists and small practices - scheduling,
+    client management, notes, and billing basics. Telehealth is an add-on.
+  entries:
+  - label: Per Therapist
+    name: essentials_per_therapist
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from $29 per therapist per month
+    userMultiplied: true
+  - label: Additional Admin User
+    name: essentials_admin_user
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $19 per additional admin user per month
+    userMultiplied: true
+  elements:
+  - name: Scheduling and Calendar Sync
+  - name: Client Management
+  - name: Clinical Notes and Templates
+  - name: Insurance Billing
+  - name: Client Portal
+- id: theranest-advanced
+  name: Advanced
+  type: paid
+  description: >-
+    Mid tier for growing practices, adding capabilities above Essentials. Public
+    per-therapist price is not consistently listed; sits between Essentials and
+    Premier.
+  entries:
+  - label: Per Therapist
+    name: advanced_per_therapist
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: per therapist per month (price varies - see pricing page)
+    userMultiplied: true
+  - label: Additional Admin User
+    name: advanced_admin_user
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $19 per additional admin user per month
+    userMultiplied: true
+  elements:
+  - name: Everything in Essentials
+  - name: Advanced Reporting
+  - name: Expanded Billing Workflows
+- id: theranest-premier
+  name: Premier
+  type: paid
+  description: >-
+    Top tier for established practices, with telehealth included at no extra
+    cost and the fullest feature set.
+  entries:
+  - label: Per Therapist
+    name: premier_per_therapist
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $89 per therapist per month
+    userMultiplied: true
+  - label: Additional Admin User
+    name: premier_admin_user
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $29 per additional admin user per month
+    userMultiplied: true
+  elements:
+  - name: Everything in Advanced
+  - name: Telehealth Included
+  - name: Priority Support
+- id: theranest-ama-cpt
+  name: AMA CPT License Fee
+  type: paid
+  description: >-
+    Annual American Medical Association CPT code license fee charged per
+    therapist, billed each December on top of the subscription.
+  entries:
+  - label: CPT License
+    name: ama_cpt_license
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: year
+    geo: us
+    unit: 1
+    price: about $19.50 per therapist per year
+    userMultiplied: true
+  elements:
+  - name: AMA CPT Code License
+- id: theranest-partner-api
+  name: Partner / Interoperability Access
+  type: enterprise
+  description: >-
+    There is no published, self-serve developer API plan. Programmatic or
+    interoperability access to TheraNest data is arranged directly with Ensora
+    Health under a partnership and HIPAA business-associate agreement. Terms and
+    any fees are negotiated - contact sales.
+  entries:
+  - label: Partner Agreement
+    name: partner_agreement
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: HIPAA Business Associate Agreement
+  - name: Interoperability / Data Exchange
+  - name: Negotiated Terms
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

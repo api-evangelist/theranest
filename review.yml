@@ -1,0 +1,97 @@
+aid: theranest
+name: TheraNest
+review:
+  question: Does TheraNest expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-10'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: >-
+    No AsyncAPI document was authored. TheraNest does not publish any documented
+    public API surface at all - REST or otherwise - let alone a server-push
+    transport (WebSocket or SSE) to model. There is nothing on TheraNest's own
+    public API to describe with AsyncAPI as of the review date.
+findings:
+  summary: >-
+    TheraNest (now marketed as Ensora Mental Health, from Ensora Health, formerly
+    Therapy Brands) does NOT publish a documented public developer API - and
+    therefore does not expose any documented public WebSocket API. TheraNest is a
+    HIPAA-regulated behavioral and mental health EHR and practice management
+    platform. Multiple software directories explicitly state TheraNest does not
+    offer an API, and the one "TheraNest API" that exists is an unofficial
+    third-party layer (Supergood) that reverse-engineers authenticated browser
+    flows because, in its own words, TheraNest has "limited public APIs." Ensora
+    marketing references "interoperable APIs" for integrating external data
+    sources, but there is no developer portal, no public API reference, no
+    published base URL, and no self-serve authentication. Integration happens
+    through named product partnerships and HIPAA-gated interoperability, not an
+    open API. No WebSocket (ws:// or wss://) endpoint is documented anywhere.
+  accessModel: >-
+    Gated. No self-serve public developer API. Any programmatic access to
+    TheraNest data (clients, appointments, notes, billing) is available only
+    through partnership or interoperability arrangements with Ensora Health, all
+    subject to HIPAA business-associate agreements. The API resources in apis.yml
+    are logical groupings modeled from the product surface (endpointsModeled true)
+    and are NOT documented public endpoints.
+  publicApi: false
+  officialDeveloperPortal: false
+  transports:
+  - protocol: REST
+    scheme: https
+    documented: false
+    note: >-
+      No documented public REST API. Ensora references "interoperable APIs" in
+      marketing but publishes no reference, base URL, or developer portal.
+  - protocol: WebSocket
+    scheme: wss
+    documented: false
+    note: No WebSocket endpoint is documented anywhere for TheraNest as of the review date.
+  - protocol: SSE
+    scheme: https
+    documented: false
+    note: No server-sent-events surface is documented.
+  endpointsModeled: true
+  endpointsConfirmedRest: []
+  integrations:
+  - name: Google Calendar
+    note: In-product calendar sync.
+  - name: iCloud Calendar
+    note: In-product calendar sync.
+  - name: Zoom
+    note: Telehealth video sessions.
+  - name: QuickBooks
+    note: Accounting export.
+  - name: Square
+    note: Point-of-sale / payment capture.
+  - name: DocuSign
+    note: E-signature on progress notes via product partnership.
+  - name: Supergood
+    note: Unofficial third-party API layer that reverse-engineers browser flows; not an official TheraNest API.
+sources:
+- url: https://ensorahealth.com/product/mental-health/
+  type: Website
+  note: TheraNest / Ensora Mental Health product page (theranest.com/partnerships redirects here).
+- url: https://ensorahealth.com/why-us/our-technology/
+  type: Documentation
+  note: Ensora marketing references "interoperable APIs" but provides no developer portal or API reference.
+- url: https://ensorahealth.com/news/therapy-brands-is-now-ensora-health/
+  type: News
+  note: April 2025 rebrand - Therapy Brands to Ensora Health, TheraNest to Ensora Mental Health.
+- url: https://supergood.ai/docs/theranest-api
+  type: ThirdParty
+  note: Unofficial API that reverse-engineers authenticated browser flows; states TheraNest has "limited public APIs."
+- url: https://www.getapp.com/healthcare-pharmaceuticals-software/a/theranest-mental-health/integrations/
+  type: Directory
+  note: Lists in-product integrations; "API" appears only as a generic feature checkbox from user reviews, not a documented developer API.
+- url: https://ensorahealth.com/pricing/theranest-mental-health/
+  type: Pricing
+  note: Per-therapist pricing - Essentials from $29/therapist/mo, Premier $89/therapist/mo.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: >-
+    No WebSocket protocol surface exists, and TheraNest publishes no documented
+    public API at all. The apis.yml entries are logical resource groupings
+    modeled from the product surface with endpointsModeled true; no endpoints
+    were fabricated and no OpenAPI or AsyncAPI document was created because there
+    is no documented public API to describe.

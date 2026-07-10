@@ -1,0 +1,91 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: TheraNest
+providerId: theranest
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Behavioral Health
+- Mental Health
+- EHR
+- Practice Management
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of TheraNest (Ensora Mental Health) spend. TheraNest is billed as
+  a per-therapist SaaS subscription, not as a metered API. There is no API-usage
+  meter, no request-based billing, and no developer plan - programmatic access,
+  where it exists, is a negotiated partnership rather than a usage line item.
+  The cost model is therefore seat-driven - per-therapist subscription plus
+  per-additional-admin-user fees, an annual AMA CPT license fee, and optional
+  add-ons such as telehealth on lower tiers. Spend scales with the number of
+  clinicians and admin seats, not with API call volume.
+notes: >-
+  Prices are grounded from Ensora / directory listings as of July 2026 and can
+  change; verify on the current pricing page. Because billing is per seat rather
+  than per API call, FinOps optimization here is about seat and tier management,
+  not throughput.
+sources:
+- https://ensorahealth.com/pricing/theranest-mental-health/
+- https://theranest.com
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Ensora Health
+serviceCategory: Healthcare Practice Management and EHR
+billingModel:
+  pricingCategory: Subscription-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: TheraNest (Ensora Mental Health)
+  ServiceCategory: Healthcare Practice Management and EHR
+  ProviderName: Ensora Health
+  PublisherName: Ensora Health
+  InvoiceIssuerName: Ensora Health
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription-Based
+meters:
+- name: therapist_seats
+  description: Per-therapist subscription seats, the primary billing driver.
+  unit: seats
+  aggregation: sum
+  dimensions:
+  - account
+  - plan
+- name: admin_user_seats
+  description: Additional admin-user seats billed on top of the per-therapist rate.
+  unit: seats
+  aggregation: sum
+  dimensions:
+  - account
+  - plan
+- name: ama_cpt_license
+  description: Annual AMA CPT code license fee, charged per therapist each December.
+  unit: seats
+  aggregation: sum
+  dimensions:
+  - account
+principles:
+- name: Visibility
+  description: Track active therapist and admin seats per plan tier; there is no API-usage meter to monitor because billing is per seat, not per request.
+- name: Allocation
+  description: Map therapist and admin seats to practices, teams, or cost centers so subscription spend is attributable.
+- name: Optimization
+  description: Right-size the plan tier to the features actually used, reclaim unused seats, and weigh Premier (telehealth included) against Essentials/Advanced plus telehealth add-on.
+- name: Accountability
+  description: Assign an owner for the subscription; review seat counts and the annual AMA CPT fee against practice headcount each billing cycle.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
