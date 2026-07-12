@@ -109,6 +109,8 @@ apis:
     documented public endpoints exist. Payments run through in-product
     processors and Ensora clearinghouse services rather than an open developer API.
 common:
+- type: DomainSecurity
+  url: security/theranest-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/ensora-health
 - type: Website
