@@ -14,6 +14,17 @@ description: >-
   contact-sales arrangements rather than an open developer portal. The API
   entries below are logical resource groupings modeled from the product surface;
   their endpoints are NOT documented public endpoints (endpointsModeled true).
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: unknown
