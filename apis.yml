@@ -42,6 +42,16 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/theranest.
 tags:
   - Behavioral Health
   - Mental Health
+  - Electronic Health Records
+  - Practice Management
+  - Healthcare
+  - HIPAA
+  - Telehealth
+  - Ensora Health
+  - Therapy Brands
+tags_raw:
+  - Behavioral Health
+  - Mental Health
   - EHR
   - Practice Management
   - Healthcare
