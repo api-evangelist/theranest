@@ -1,4 +1,4 @@
-# TheraNest (theranest)
+# TheraNest
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,72 +64,93 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-TheraNest - now marketed as **Ensora Mental Health**, from **Ensora Health** (formerly **Therapy Brands**) - is a behavioral and mental health practice management and EHR platform for therapists, counselors, psychologists, and social workers. It covers client intake, scheduling, telehealth, clinical documentation and notes, treatment plans, client portals, insurance billing and claims, and reporting.
+TheraNest (now marketed as Ensora Mental Health) is a behavioral and mental health practice management and EHR platform for therapists, counselors, psychologists, and social workers. It covers client intake, scheduling, telehealth, clinical documentation and notes, treatment plans, client portals, insurance billing and claims, and reporting. TheraNest is the flagship mental health product of Ensora Health (formerly Therapy Brands). As of this review, Ensora does not publish a documented, self-serve public developer API for TheraNest - integration is via partnerships, HIPAA-gated interoperability, and contact-sales arrangements rather than an open developer portal. The API entries below are logical resource groupings modeled from the product surface; their endpoints are NOT documented public endpoints (endpointsModeled true).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/theranest/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/theranest/refs/heads/main/apis.yml)
+**Areas:** Behavioral Health · Mental Health · Electronic Health Records · Practice Management · Healthcare · HIPAA · Telehealth · Ensora Health · Therapy Brands
 
-## API Access Model - Gated / No Public Developer API
+## TheraNest on APIs.io
 
-This entry is documented honestly as a **gated provider**. As of this review (July 2026), TheraNest does **not** publish a documented, self-serve public developer API:
+Everything profiled for TheraNest is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/theranest/](https://apis.io/providers/theranest/)** — or go straight to one of the APIs or properties below.
 
-- There is **no developer portal**, no public API reference, no published base URL, and no self-serve authentication.
-- Multiple software directories explicitly state TheraNest does not offer an API.
-- The one "TheraNest API" that circulates is an **unofficial third-party layer** (Supergood) that reverse-engineers authenticated browser flows - it is not an official TheraNest product, and it exists precisely because TheraNest has "limited public APIs."
-- Ensora marketing references "interoperable APIs" for integrating external data sources, but this is HIPAA-gated interoperability and partner integration - arranged via contact-sales and a business-associate agreement - not an open API.
+### Published properties
 
-Because TheraNest handles protected health information (PHI) under HIPAA, any programmatic access is partner- and BAA-gated by design.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Modeled APIs
+#### Security (1)
 
-The API entries in `apis.yml` are **logical resource groupings modeled from the product surface** (`endpointsModeled: true`). They are **not** documented public endpoints, and no endpoints were fabricated:
+Authentication, trust centre, and vulnerability disclosure.
 
-- **TheraNest Clients API** - client demographics, insurance policies, diagnoses, portal status.
-- **TheraNest Appointments API** - scheduling, recurring sessions, telehealth settings, service codes, reminders.
-- **TheraNest Clinical Notes API** - progress notes, treatment plans, templates, sign-off / locking.
-- **TheraNest Billing and Claims API** - invoices, payments, eligibility/authorizations, CMS-1500 / 837P claims, clearinghouse routing.
+- [Theranest Domain Security](https://apis.io/security/theranest/theranest-domain-security/)
 
-## Tags
+#### Plans and pricing (1)
 
-- Behavioral Health
-- Mental Health
-- EHR
-- Practice Management
-- Healthcare
-- HIPAA
-- Telehealth
-- Ensora Health
-- Therapy Brands
+Published plans, tiers and prices.
 
-## Timestamps
+- [Theranest Plans Pricing](https://apis.io/plans/theranest/theranest-plans-pricing/)
 
-- **Created:** 2026-07-10
-- **Modified:** 2026-07-10
+#### FinOps (1)
 
-## Pricing
+What the API costs to run, by operation.
 
-TheraNest is sold as a **per-therapist SaaS subscription**, not as an API product. Published tiers (grounded July 2026; verify on the current pricing page):
+- [Theranest Finops](https://apis.io/finops/theranest/theranest-finops/)
 
-- **Essentials** - from **$29 / therapist / month**; telehealth is an add-on.
-- **Advanced** - mid tier; per-therapist price varies and is not consistently published.
-- **Premier** - **$89 / therapist / month**, telehealth included.
-- **AMA CPT license fee** - about **$19.50 / therapist / year**, billed each December.
-- **Additional admin users** - $19/mo (Essentials/Advanced), $29/mo (Premier).
+## Where to find this API
 
-There is no metered API tier or developer pricing; partner/interoperability access is negotiated directly (contact sales). See [`plans/theranest-plans-pricing.yml`](plans/theranest-plans-pricing.yml) and [`finops/theranest-finops.yml`](finops/theranest-finops.yml).
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-## In-Product Integrations
-
-Google Calendar, iCloud Calendar, Zoom (telehealth), QuickBooks, Square, and DocuSign (e-signature on notes) - all delivered as in-product integrations and partnerships, not via an open API.
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/ensora-health)
 - [Website](https://theranest.com)
-- [Documentation / Knowledge Base](https://theranest.zendesk.com/hc/en-us)
-- [Plans](plans/theranest-plans-pricing.yml)
-- [Fin Ops](finops/theranest-finops.yml)
+- [Documentation](https://theranest.zendesk.com/hc/en-us)
+- [Blog](https://ensorahealth.com/news/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 5.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/theranest/](https://apis.io/providers/theranest/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for TheraNest: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/theranest/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
